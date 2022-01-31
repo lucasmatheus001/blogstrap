@@ -1,5 +1,4 @@
 class Article < ApplicationRecord
-    def index
-        @articles = Article.all
-    end
+    validates :title, presence: true, length: { minimum: 3, maximum: 50 }
+    validates :body, presence: true, length: { minimum: 5, maximum: 300 }
 end
